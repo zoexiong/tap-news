@@ -14,6 +14,13 @@ app.set('views', path.join(__dirname, '../client/build/'));
 app.set('view engine', 'jade');
 app.use('/static', express.static(path.join(__dirname, '../client/build/static/')));
 
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  // must use next to hand the request to router
+  next();
+});
+
 app.use('/', index);
 app.use('/news', news);
 

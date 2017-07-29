@@ -27,43 +27,19 @@ class NewsPanel extends React.Component{
     // }
 
     loadMoreNews() {
-        // let request = new Request('http://localhost:3000/news', {
-        //     method: 'GET',
-        //     cache: false});
-        //
-        // fetch(request)
-        //     .then((res) => res.json())
-        //     .then((news) => {
-        //         this.setState({
-        //             news: this.state.news? this.state.news.concat(news) : news,
-        //         });
-        //     });
+        let request = new Request('http://localhost:3000/news', {
+            method: 'GET',
+            //if cache is true, will get same news if refresh
+            cache: false});
 
-        this.setState({
-            news: [
-                {
-                    'url':'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
-                    'title':'aaa',
-                    'description':'aaa',
-                    'source':'aaa',
-                    'urlToImage':'aaa',
-                    'digest':'aaa',
-                    'reason':'aaa',
-
-                },
-                {
-                    'url':'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
-                    'title':'bbb',
-                    'description':'bbb',
-                    'source':'bbb',
-                    'urlToImage':'bbb',
-                    'digest':'bbb',
-                    'reason':'aaa',
-
-                }
-            ]
-        });
-
+        fetch(request)
+            .then((res) => res.json())
+            .then((news) => {
+                this.setState({
+                    //if this.state.news is not null, add fetched news to existing news and set state
+                    news: this.state.news? this.state.news.concat(news) : news,
+                });
+            });
     }
 
     renderNews() {
