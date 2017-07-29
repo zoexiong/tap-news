@@ -27,42 +27,43 @@ class NewsPanel extends React.Component{
     // }
 
     loadMoreNews() {
-        let request = new Request('http://localhost:3000/news', {
-            method: 'GET',
-            cache: false});
-
-        fetch(request)
-            .then((res) => res.json())
-            .then((news) => {
-                this.setState({
-                    news: this.state.news? this.state.news.concat(news) : news,
-                });
-            });
-
-        // this.setState({
-        //     news: [
-        //         {
-        //             'url':'abc',
-        //             'title':'aaa',
-        //             'description':'aaa',
-        //             'source':'aaa',
-        //             'urlToImage':'aaa',
-        //             'digest':'aaa',
-        //             'reason':'aaa',
+        // let request = new Request('http://localhost:3000/news', {
+        //     method: 'GET',
+        //     cache: false});
         //
-        //         },
-        //         {
-        //             'url':'xxx',
-        //             'title':'bbb',
-        //             'description':'bbb',
-        //             'source':'bbb',
-        //             'urlToImage':'bbb',
-        //             'digest':'bbb',
-        //             'reason':'aaa',
-        //
-        //         }
-        //     ]
-        // });
+        // fetch(request)
+        //     .then((res) => res.json())
+        //     .then((news) => {
+        //         this.setState({
+        //             news: this.state.news? this.state.news.concat(news) : news,
+        //         });
+        //     });
+
+        this.setState({
+            news: [
+                {
+                    'url':'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+                    'title':'aaa',
+                    'description':'aaa',
+                    'source':'aaa',
+                    'urlToImage':'aaa',
+                    'digest':'aaa',
+                    'reason':'aaa',
+
+                },
+                {
+                    'url':'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+                    'title':'bbb',
+                    'description':'bbb',
+                    'source':'bbb',
+                    'urlToImage':'bbb',
+                    'digest':'bbb',
+                    'reason':'aaa',
+
+                }
+            ]
+        });
+
     }
 
     renderNews() {
