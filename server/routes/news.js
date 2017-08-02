@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
         'title':'aaa',
         'description':'aaa',
         'source':'aaa',
-        'urlToImage':'aaa',
+        'urlToImage':'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
         'digest':'aaa',
         'reason':'aaa',
 
@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
         'title':'bbb',
         'description':'bbb',
         'source':'bbb',
-        'urlToImage':'bbb',
+        'urlToImage':'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
         'digest':'bbb',
         'reason':'aaa',
 
