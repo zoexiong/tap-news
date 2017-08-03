@@ -27,7 +27,6 @@ router.get('/', function(req, res, next) {
     ];
 
   res.json(news);
-  res.send('respond with a resource');
 });
 
 module.exports = router;
