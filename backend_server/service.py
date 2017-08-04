@@ -5,10 +5,9 @@ SERVER_PORT = 4040
 
 class RequestHandler(pyjsonrpc.HttpRequestHandler):
     """ Test method """
-    # use annotation to declare this is an API
     @pyjsonrpc.rpcmethod
     def add(self, a, b):
-        print("add is called with %d and %d" % (a, b))
+        print "add is called with %d and %d" % (a, b)
         return a + b
 
 http_server = pyjsonrpc.ThreadingHttpServer(
@@ -16,6 +15,7 @@ http_server = pyjsonrpc.ThreadingHttpServer(
     RequestHandlerClass = RequestHandler
 )
 
-print("Starting HTTP server on %s:%d" % (SERVER_HOST, SERVER_PORT))
+print "Starting HTTP server on %s:%d" % (SERVER_HOST, SERVER_PORT)
 
 http_server.serve_forever()
+
