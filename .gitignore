@@ -25,6 +25,7 @@ yarn-error.log*
 /dist
 /tmp
 /out-tsc
+*.pyc
 
 # IDEs and editors
 .idea/

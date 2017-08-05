@@ -1,4 +1,4 @@
-from CloudAMQPClient import CloudAMQPClient
+from cloudAMQP_client import CloudAMQPClient
 
 CLOUDAMQP_URL = "amqp://hoamejlv:tlr-stbY0WU6WCR9rgEfEdzFuANiRj0K@donkey.rmq.cloudamqp.com/hoamejlv"
 
