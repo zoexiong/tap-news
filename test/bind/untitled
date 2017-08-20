@@ -1,0 +1,24 @@
+var a = 37;
+
+var obj1 = {
+   a: 39,
+   fff: function() {
+    var a = 41;
+    (function(){console.log(1, a)})();
+    console.log(2, this.a);
+    (function(){console.log(3, this.a)})();
+    function f1() {
+      console.log(4, this.a);
+      (() => {
+      console.log(5, this.a);
+    })();
+      function f2() {
+        console.log(6, this.a);
+      }
+      f2();
+    }
+    f1();
+  }
+}
+
+obj1.fff(); //f2 37 f2 39
