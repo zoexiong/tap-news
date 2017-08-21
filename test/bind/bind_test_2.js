@@ -9,12 +9,13 @@ function Cat() {
    }
    this.bc_foo = this.foo.bind(this);
 
-  /********* 2 **********
+  /******** 2 **********/
   var dog1 = new Dog();
-  dog1.fun(cat1.foo);
-  dog1.fun(cat1.bc_foo);
-  dog1.fun(() => {console.log('匿名', this.name)})
-  */
+  dog1.fun(cat1.foo); //global
+  dog1.fun(cat1.bc_foo); //Big C
+  //if use arrow function, it will get the variable in the current environment
+  dog1.fun(() => {console.log('匿名', this.name)}) //Big C
+  
 }
 
 cat1 = new Cat();
@@ -31,5 +32,6 @@ function Dog() {
 
 /******** 1 *********/
 var dog1 = new Dog();
-dog1.fun(cat1.foo);
-dog1.fun(cat1.bc_foo);
+// dog1.fun(cat1.foo);
+// dog1.fun(cat1.bc_foo);
+dog1.fun(() => {console.log('匿名', this.name)}) //global
