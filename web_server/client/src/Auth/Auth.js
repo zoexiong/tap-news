@@ -13,7 +13,7 @@ class Auth {
 
     /**
      * Check if a user is authenticated - check if a token is saved in Local Storage
-     *
+     * 很容易骗过前端，可以伪造token，但是不能从server拿到数据
      * @returns {boolean}
      */
     static isUserAuthenticated() {
