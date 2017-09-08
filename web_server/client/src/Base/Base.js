@@ -1,5 +1,6 @@
 // wrap App component in Base
 
+
 import React, { PropTypes } from 'react';
 import Auth from '../Auth/Auth';
 const Base = ({ children }) => (
@@ -9,7 +10,7 @@ const Base = ({ children }) => (
             <div className="nav-wrapper">
                 <a href="/" className="brand-logo">&nbsp;&nbsp;Tap News</a>
                 <ul id="nav-mobile" className="right">
-                    /*if authed (this is JSX syntax, not html5)*/
+                    {/*if authed (this is JSX syntax, not html5)*/}
                     {Auth.isUserAuthenticated() ?
                         (<div>
                             <li>{Auth.getEmail()}</li>

@@ -34,7 +34,7 @@ class SignUpPage extends React.Component {
     console.log('confirm_assword:', confirm_password);
 
     if (password !== confirm_password) {
-      errors.summary = 'confirm password should match password';
+      this.setState({errors: {password: 'Password and Confirm Password don\'t match.'}});
       return;
     }
 
@@ -67,7 +67,7 @@ class SignUpPage extends React.Component {
           console.log(this.state.errors);
           this.setState({errors});
             //bind this because this function will be used by sign-up form and 
-        ss}.bind(this));
+        }.bind(this));
       }
     });
   }
