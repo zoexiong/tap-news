@@ -2,6 +2,7 @@ import './NewsPanel.css';
 import React from 'react';
 import _ from 'lodash';
 
+import Auth from '../Auth/Auth';
 import NewsCard from '../NewsCard/NewsCard'
 
 class NewsPanel extends React.Component{
@@ -33,6 +34,9 @@ class NewsPanel extends React.Component{
     loadMoreNews() {
         let request = new Request('http://localhost:3000/news', {
             method: 'GET',
+            headers: {
+                'Authorization': 'bearer ' + Auth.getToken(),
+            },
             //if cache is true, will get same news if refresh
             cache: false});
 
