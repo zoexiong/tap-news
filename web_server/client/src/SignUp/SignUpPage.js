@@ -18,7 +18,7 @@ class SignUpPage extends React.Component {
     };
 
     this.processForm = this.processForm.bind(this);
-    this.changeUser = this.changeUser.bind(this);
+    this.changeForm = this.changeForm.bind(this);
   }
 
   processForm(event) {
@@ -38,7 +38,7 @@ class SignUpPage extends React.Component {
       return;
     }
 
-    // Post registeration data
+    // Post registration data
     fetch('http://localhost:3000/auth/signup', {
       method: 'POST',
       cache: false,
@@ -66,12 +66,13 @@ class SignUpPage extends React.Component {
           errors.summary = json.message;
           console.log(this.state.errors);
           this.setState({errors});
-        }.bind(this));
+            //bind this because this function will be used by sign-up form and 
+        ss}.bind(this));
       }
     });
   }
 
-  changeUser(event) {
+  changeForm(event) {
     const field = event.target.name;
     const user = this.state.user;
     user[field] = event.target.value;
@@ -95,7 +96,7 @@ class SignUpPage extends React.Component {
     return (
       <SignUpForm
         onSubmit={this.processForm}
-        onChange={this.changeUser}
+        onChange={this.changeForm}
         errors={this.state.errors}
         user={this.state.user}
       />

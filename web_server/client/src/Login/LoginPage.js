@@ -47,6 +47,7 @@ class LoginPage extends React.Component {
             })
         }).then(response => {
             if (response.status === 200) {
+                //don't need to bind this here because the scope is still the same (already bound in constructor)
                 this.setState({
                     errors: {}
                 });
