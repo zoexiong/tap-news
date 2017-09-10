@@ -19,10 +19,10 @@ module.exports = (req, res, next) => {
         // the 401 code is for unauthorized status
         if (err) { return res.status(401).end(); }
 
-        const email = decoded.sub;
+        const id = decoded.sub;
 
         // check if a user exists
-        return User.findById(email, (userErr, user) => {
+        return User.findById(id, (userErr, user) => {
             if (userErr || !user) {
                 return res.status(401).end();
             }
