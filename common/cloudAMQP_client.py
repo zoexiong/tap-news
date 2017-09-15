@@ -31,7 +31,7 @@ class CloudAMQPClient:
         # if method_frame, means method is send and message was get successfully , network is fine
         if method_frame is not None:
             print "[O] Received message from %s: %s" % (self.queue_name, body)
-            # send acknowledgement to server to tell it message was received
+            # send acknowledgement to server to tell it the message was received
             # so server could delete message to avoid duplicate
             # use delivery_tag for identification, could avoid fake ack
             self.channel.basic_ack(method_frame.delivery_tag)

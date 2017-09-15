@@ -41,7 +41,7 @@ def extract_news(news_url):
         # join news list
         news = ''.join(news)
     except Exception as e:
-        print # coding=utf-8
+        print e
         return {}
 
     return news
