@@ -22,7 +22,8 @@ class CloudAMQPClient:
                                    routing_key=self.queue_name,
                                    # turn json into string
                                    body=json.dumps(message))
-        print "[X] Sent message to %s: %s" % (self.queue_name, message)
+        # print "[X] Sent message to %s: %s" % (self.queue_name, message)
+        print "[X] Sent message to %s" % (self.queue_name)
         return
 
     # get message
@@ -30,7 +31,8 @@ class CloudAMQPClient:
         method_frame, header_frame, body = self.channel.basic_get(self.queue_name)
         # if method_frame, means method is send and message was get successfully , network is fine
         if method_frame is not None:
-            print "[O] Received message from %s: %s" % (self.queue_name, body)
+            print "[O] Received message from %s" % (self.queue_name)
+            # print "[O] Received message from %s: %s" % (self.queue_name, body)
             # send acknowledgement to server to tell it the message was received
             # so server could delete message to avoid duplicate
             # use delivery_tag for identification, could avoid fake ack

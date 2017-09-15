@@ -1,6 +1,10 @@
+lxml
+numpy
+pika
+python-dateutil
 python-jsonrpc
 pymongo
-pika
 redis
 requests
-lxml
+scipy
+sklearn

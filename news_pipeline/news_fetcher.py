@@ -9,7 +9,7 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'common'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'scrapers'))
 
-import cnn_news_scraper
+import news_scraper
 from cloudAMQP_client import CloudAMQPClient
 
 # Use your own Cloud AMQP queue
@@ -32,9 +32,9 @@ def handle_message(msg):
 
     # now we only support CNN
 
-    if task['source'] == 'cnn':
-        print 'Scraping CNN news'
-        text = cnn_news_scraper.extract_news(task['url'])
+    if task['source'] == 'cnn' or task['source'] == 'bbc-news':
+        print 'Scraping news from [%s]' % task['source']
+        text = news_scraper.extract_news(task['url'],task['source'])
         task['text'] = text
         dedupe_news_queue_client.sendMessage(task)
     else:
