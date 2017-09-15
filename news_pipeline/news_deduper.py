@@ -54,6 +54,7 @@ def handle_message(msg):
         tfidf = TfidfVectorizer().fit_transform(documents)
         pairwise_sim = tfidf * tfidf.T
 
+        # output as array
         print pairwise_sim.A
 
         rows, _ = pairwise_sim.shape
