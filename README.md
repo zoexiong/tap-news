@@ -1,3 +1,4 @@
-# [**Tap News**]() (under development， will be deplyed to AWS soon)
+# [**Tap News**](https://github.com/zoexiong/tap-news) 
+(under development, will be deployed to AWS soon)
 
-A news website that provides personalized recommendations for users based on their browsing history using tensorflow. All news are provided by a data pipeline that monitors, scrapes and dedupes latest news.
+A news website that provides personalized recommendations for registered users based on their browsing history using tensorflow. All news are provided by a data pipeline that monitors, scrapes and dedupes latest news.
